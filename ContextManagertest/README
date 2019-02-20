@@ -1,0 +1,19 @@
+讲到上下文管理器，就不得不说到python的with语法。基本语法格式为：
+
+with EXPR as VAR:
+    BLOCK
+这里就是一个标准的上下文管理器的使用逻辑，稍微解释一下其中的运行逻辑：
+
+（1）执行EXPR语句，获取上下文管理器（Context Manager）
+
+（2）调用上下文管理器中的__enter__方法，该方法执行一些预处理工作。
+
+（3）这里的as VAR可以省略，如果不省略，则将__enter__方法的返回值赋值给VAR。
+
+（4）执行代码块BLOCK，这里的VAR可以当做普通变量使用。
+
+（5）最后调用上下文管理器中的的__exit__方法。
+
+（6）__exit__方法有三个参数：exc_type, exc_val, exc_tb。如果代码块BLOCK发生异常并退出，那么分别对应异常的type、value 和 traceback。否则三个参数全为None。
+
+（7）__exit__方法的返回值可以为True或者False。如果为True，那么表示异常被忽视，相当于进行了try-except操作；如果为False，则该异常会被重新raise。
