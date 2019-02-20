@@ -1,0 +1,20 @@
+#!/usr/bin/python
+class myDecorator(object):
+ 
+    def __init__(self, str):
+        print "inside myDecorator.__init__()"
+        self.str = str 
+ 
+    def __call__(self, fn):
+        print "inside myDecorator.__call__()"
+        print "start", self.str
+        print "end", self.str
+        return fn
+ 
+@myDecorator('aha')
+def aFunction():
+    print "inside aFunction()"
+ 
+print "Finished decorating aFunction()"
+ 
+aFunction()

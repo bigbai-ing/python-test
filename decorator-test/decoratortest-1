@@ -1,0 +1,22 @@
+#-*-coding=utf-8-*-
+import logging
+ 
+ 
+def get_parameter(func):
+    print "IN GET PARAMETER"
+ 
+    def new_func():
+        print "inside new func"
+        return func()
+ 
+    print "END GET PARAMETER"
+    return new_func
+ 
+ 
+@get_parameter
+def show_function():
+    print "SHOW Function"
+    return "HELLO"
+
+a = show_function
+a()

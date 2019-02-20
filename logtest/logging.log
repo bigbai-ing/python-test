@@ -3,3 +3,7 @@
 2018-12-22 15:26:23,802 - simple_example - WARNING - warn message
 2018-12-22 15:26:23,803 - simple_example - ERROR - error message
 2018-12-22 15:26:23,803 - simple_example - CRITICAL - critical message
+2019-02-15 11:28:00,521 - simple_example - INFO - info message
+2019-02-15 11:28:00,522 - simple_example - WARNING - warn message
+2019-02-15 11:28:00,522 - simple_example - ERROR - error message
+2019-02-15 11:28:00,522 - simple_example - CRITICAL - critical message
