@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sqlalchemy as sa
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Date, ForeignKey, JSON
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -19,6 +19,7 @@ class Person(Base):
     birthday = Column(Date)
     realname = Column(String(64))
     idcard = Column(String(20))
+    extra = Column(JSON, nullable=False)
 
 
 class Telephone(Base):
@@ -29,6 +30,6 @@ class Telephone(Base):
 
 
 if __name__ == '__main__':
-    engine = create_engine("sqlite:///test.db")
+    engine = create_engine("sqlite:///testa.db")
     Base.metadata.create_all(engine)
 

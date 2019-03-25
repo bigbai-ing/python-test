@@ -13,3 +13,10 @@ class Student(object):
 
 student1 = Student()
 print student1.value
+
+def foo():
+    a = 1
+    b = 3
+    return c = a + b
+aa = foo()
+print(aa)
