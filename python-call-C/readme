@@ -1,0 +1,10 @@
+python 调用 C代码测试
+
+首先写add.c文件
+然后编译成so库文件
+gcc -shared -Wl,-soname,adder -o adder.so -fPIC add.c
+
+
+然后通过ctypes 来调用
+
+参考：https://blog.csdn.net/qq_35636311/article/details/78255568https://blog.csdn.net/qq_35636311/article/details/78255568
